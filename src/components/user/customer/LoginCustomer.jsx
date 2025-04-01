@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import loginImage from "../../../images/signup-image-removebg-preview.png";
-import { Link, useNavigate } from 'react-router-dom';
-import { account } from '../appwrite';
-import { toast } from 'react-toastify';
+import { Link, useNavigate } from "react-router-dom";
+import { account } from "../appwrite";
+import { toast } from "react-toastify";
 
 const LoginCustomer = () => {
   const [email, setEmail] = useState("");
@@ -20,20 +20,25 @@ const LoginCustomer = () => {
         navigate("/addanewpro");
       }, 3000);
     } catch (error) {
-      toast.error("Login failed! Please check your credentials.", { position: "top-right" });
+      toast.error("Login failed! Please check your credentials.", {
+        position: "top-right",
+      });
     }
   };
 
   return (
     <div className="LoginCustomer container d-flex mt-2 justify-content-center">
-      <div className="card mt-5 p-5 mb-5 shadow-lg" style={{ maxWidth: "900px", width: "100%" }}>
+      <div
+        className="card mt-5 p-5 mb-5 shadow-lg"
+        style={{ maxWidth: "900px", width: "100%" }}
+      >
         <div className="row">
           {/* Form Section */}
           <div className="col-lg-6 col-md-12">
-          <h4 className="mb-4 text-primary text-center text-lg-start">
-  Welcome Back! 👋 <br />
-  Log in to continue your journey with us.
-</h4>
+            <h4 className="mb-4 text-primary text-center text-lg-start">
+              Welcome Back! 👋 <br />
+              Log in to continue your journey with us.
+            </h4>
 
             <form onSubmit={handleLogin}>
               {/* Email */}
@@ -64,15 +69,35 @@ const LoginCustomer = () => {
 
               {/* Remember Me */}
               <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="rememberMe" required />
-                <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="rememberMe"
+                  required
+                />
+                <label className="form-check-label" htmlFor="rememberMe">
+                  Remember Me
+                </label>
               </div>
 
               {/* Login Button */}
-              <button type="submit" className="btn btn-primary w-100 rounded-pill">Login</button>
-                 {/* Login Link */}
-                 <div className="text-start mt-3">
-                <p>Don't have an account? <Link to="/registerclient" className="text-primary">Register Here</Link></p>
+              <button
+                type="submit"
+                className="btn btn-primary w-100 rounded-pill"
+              >
+                Login
+              </button>
+              {/* Login Link */}
+              <div className="text-start mt-3">
+                <p>
+                  Don't have an account?{" "}
+                  <Link
+                    to="/FinanceAdvisor/registerclient"
+                    className="text-primary"
+                  >
+                    Register Here
+                  </Link>
+                </p>
               </div>
             </form>
           </div>

@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { MdPerson, MdEmail, MdWork, MdPhone } from "react-icons/md";
 import { RiLockPasswordLine, RiLockPasswordFill } from "react-icons/ri";
 import imageregisterclient from "../../../images/signup-image-removebg-preview.png";
-import { useNavigate, Link } from 'react-router-dom';
-import { account } from '../appwrite';
-import { toast } from 'react-toastify';
-import { ID } from 'appwrite';
+import { useNavigate, Link } from "react-router-dom";
+import { account } from "../appwrite";
+import { toast } from "react-toastify";
+import { ID } from "appwrite";
 
 const RegisterCustomer = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [jobTitle, setJobTitle] = useState("");  // New Job Title field
-  const [phone, setPhone] = useState("");  // New Phone field
+  const [jobTitle, setJobTitle] = useState(""); // New Job Title field
+  const [phone, setPhone] = useState(""); // New Phone field
   const [password, setPassword] = useState("");
   const [repassword, setRepassword] = useState("");
   const navigate = useNavigate();
@@ -29,18 +29,23 @@ const RegisterCustomer = () => {
         navigate("/loginclient");
       }, 3000);
     } catch (error) {
-      toast.error(error.message || "An error occurred during registration!", { position: "top-right" });
+      toast.error(error.message || "An error occurred during registration!", {
+        position: "top-right",
+      });
     }
   };
 
   return (
     <div className="RegisterCustomer container d-flex mt-2 justify-content-center">
-      <div className="card mt-5 p-5 mb-5 shadow-lg" style={{ maxWidth: "900px", width: "100%" }}>
+      <div
+        className="card mt-5 p-5 mb-5 shadow-lg"
+        style={{ maxWidth: "900px", width: "100%" }}
+      >
         <div className="row">
           {/* Form Section */}
           <div className="col-lg-6 col-md-12">
             <h4 className="mb-4 text-primary text-lg-start">
-               Join Us Today! <br />
+              Join Us Today! <br />
               Create your account and start your journey.
             </h4>
 
@@ -125,23 +130,46 @@ const RegisterCustomer = () => {
 
               {/* Checkbox */}
               <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-                <label className="form-check-label" htmlFor="exampleCheck1">I agree to the terms and conditions</label>
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="exampleCheck1"
+                />
+                <label className="form-check-label" htmlFor="exampleCheck1">
+                  I agree to the terms and conditions
+                </label>
               </div>
 
               {/* Register Button */}
-              <button type="submit" className="btn btn-primary w-100 rounded-pill">Register</button>
+              <button
+                type="submit"
+                className="btn btn-primary w-100 rounded-pill"
+              >
+                Register
+              </button>
 
               {/* Login Link */}
               <div className="text-start mt-3">
-                <p>Already have an account? <Link to="/loginclient" className="text-primary">Login</Link></p>
+                <p>
+                  Already have an account?{" "}
+                  <Link
+                    to="/FinanceAdvisor/loginclient"
+                    className="text-primary"
+                  >
+                    Login
+                  </Link>
+                </p>
               </div>
             </form>
           </div>
 
           {/* Image Section */}
           <div className="col-lg-6 col-md-12 d-flex align-items-center justify-content-center mt-4">
-            <img src={imageregisterclient} alt="register client" className="img-fluid" />
+            <img
+              src={imageregisterclient}
+              alt="register client"
+              className="img-fluid"
+            />
           </div>
         </div>
       </div>

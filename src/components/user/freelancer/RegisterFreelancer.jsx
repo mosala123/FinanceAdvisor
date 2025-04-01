@@ -3,7 +3,7 @@ import { MdEmail, MdPerson, MdPhone, MdWork } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import registerImage from "../../../images/signup-image-removebg-preview.png";
 import { ID } from "appwrite"; // Import ID for unique user creation
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { accountFreelancer } from "../appwritefreelancer";
@@ -43,11 +43,16 @@ const RegisterFreelancer = () => {
 
   return (
     <div className="RegisterFreelancer container d-flex mt-2 justify-content-center">
-      <div className="card mt-5 p-5 mb-5 shadow-lg m-2 m-lg-5 " style={{ maxWidth: "1000px", width: "100%" }}>
+      <div
+        className="card mt-5 p-5 mb-5 shadow-lg m-2 m-lg-5 "
+        style={{ maxWidth: "1000px", width: "100%" }}
+      >
         <div className="row">
           {/* Form Section */}
           <div className="col-lg-6 col-md-12">
-          <h2 className="mb-4 text-primary">Join as a Freelancer & Start Your Journey Today!</h2>
+            <h2 className="mb-4 text-primary">
+              Join as a Freelancer & Start Your Journey Today!
+            </h2>
 
             <form onSubmit={handleRegister}>
               {/* Full Name */}
@@ -140,21 +145,35 @@ const RegisterFreelancer = () => {
               </div>
 
               {/* Register Button */}
-              <button type="submit" className="btn btn-primary w-100 rounded-pill">Register</button>
+              <button
+                type="submit"
+                className="btn btn-primary w-100 rounded-pill"
+              >
+                Register
+              </button>
             </form>
 
             {/* Login Link */}
             <div className="text-start mt-3">
               <p>
-                Already have an account? {" "}
-                <a href="/loginfreelancer" className="text-primary">Login</a>
+                Already have an account?{" "}
+                <Link
+                  href="/FinanceAdvisor/loginfreelancer"
+                  className="text-primary"
+                >
+                  Login
+                </Link>
               </p>
             </div>
           </div>
 
           {/* Image Section */}
           <div className="col-lg-6 col-md-12 d-flex align-items-center justify-content-center mt-4">
-            <img src={registerImage} alt="Register Freelancer" className="img-fluid" />
+            <img
+              src={registerImage}
+              alt="Register Freelancer"
+              className="img-fluid"
+            />
           </div>
         </div>
       </div>

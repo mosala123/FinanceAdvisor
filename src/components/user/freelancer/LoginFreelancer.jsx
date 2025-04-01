@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import loginImage from "../../../images/signup-image-removebg-preview.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { accountFreelancer } from "../appwritefreelancer";
 
@@ -22,17 +22,24 @@ const LoginFreelancer = () => {
         navigate("/profile");
       }, 3000);
     } catch (error) {
-      toast.error("Login failed! Please check your credentials.", { position: "top-right" });
+      toast.error("Login failed! Please check your credentials.", {
+        position: "top-right",
+      });
     }
   };
 
   return (
     <div className="LoginFreelancer container d-flex mt-5 justify-content-center">
-      <div className="card mt-5 p-5 mb-5 shadow-lg m-3 " style={{ maxWidth: "1000px", width: "100%" }}>
+      <div
+        className="card mt-5 p-5 mb-5 shadow-lg m-3 "
+        style={{ maxWidth: "1000px", width: "100%" }}
+      >
         <div className="row">
           {/* Form Section */}
           <div className="col-lg-6 col-md-12">
-          <h4 className="mb-4 text-primary">Welcome Back! Log in to Your Account</h4>
+            <h4 className="mb-4 text-primary">
+              Welcome Back! Log in to Your Account
+            </h4>
 
             <form onSubmit={handleLogin}>
               {/* Email Input */}
@@ -60,13 +67,23 @@ const LoginFreelancer = () => {
                   required
                 />
               </div>
- {/* Remember Me */}
- <div className="form-check mb-3">
-                <input type="checkbox" className="form-check-input" id="rememberMe" required />
-                <label className="form-check-label" htmlFor="rememberMe">Remember Me</label>
+              {/* Remember Me */}
+              <div className="form-check mb-3">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  id="rememberMe"
+                  required
+                />
+                <label className="form-check-label" htmlFor="rememberMe">
+                  Remember Me
+                </label>
               </div>
               {/* Login Button */}
-              <button type="submit" className=" btn btn-primary w-100 rounded-pill">
+              <button
+                type="submit"
+                className=" btn btn-primary w-100 rounded-pill"
+              >
                 Login
               </button>
             </form>
@@ -75,7 +92,12 @@ const LoginFreelancer = () => {
             <div className="text-start mt-3">
               <p>
                 Don't have an account?{" "}
-                <a href="/registerfreelancer" className="text-primary">Register now</a>
+                <Link
+                  href="/FinanceAdvisor/registerfreelancer"
+                  className="text-primary"
+                >
+                  Register now
+                </Link>
               </p>
             </div>
           </div>
