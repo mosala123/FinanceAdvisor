@@ -4,8 +4,7 @@ import { account } from "../user/appwrite";
 import { useNavigate } from "react-router-dom";
 
 const AddProjects = () => {
-
-  // add anew pro 
+  // add anew pro
   const [data, setdata] = useState({
     ProjectTitle: "",
     Deadline: "",
@@ -57,30 +56,21 @@ const AddProjects = () => {
     setError("");
   };
 
-
-
-
-  // get user 
-  const [clientUser, setclientUser] = useState({})
+  // get user
+  const [clientUser, setclientUser] = useState({});
   useEffect(() => {
-
     const getUserData = async () => {
-
       try {
-        const userdata = await account.get()
+        const userdata = await account.get();
 
-        setclientUser(userdata)
+        setclientUser(userdata);
       } catch (error) {
         console.error("Error fetching user data:", error.message);
       }
-    }
+    };
 
-    getUserData()
-  }, [])
-
-
-
-
+    getUserData();
+  }, []);
 
   return (
     <div className="container-fluid bg-light py-5">
@@ -90,21 +80,24 @@ const AddProjects = () => {
         <form className="p-4 bg-white shadow-lg rounded">
           {error && <p className="text-danger text-center">{error}</p>}
 
-
           <div className="row mb-3">
             {/* Owner Name */}
             <div className="col-md-6">
               <label className="form-label fw-bold">Your Name</label>
-              <p className="border rounded p-2 bg-light"> {clientUser?.name || "Loading..."}</p>
+              <p className="border rounded p-2 bg-light">
+                {" "}
+                {clientUser?.name || "Loading..."}
+              </p>
             </div>
 
             {/* Owner Email */}
             <div className="col-md-6">
               <label className="form-label fw-bold">Your Email</label>
-              <p className="border rounded p-2 bg-light">{clientUser?.email || "Loading..."}</p>
+              <p className="border rounded p-2 bg-light">
+                {clientUser?.email || "Loading..."}
+              </p>
             </div>
           </div>
-
 
           {/* Project Title */}
           <div className="mb-3">
@@ -161,7 +154,7 @@ const AddProjects = () => {
                 onChange={handleChange}
                 className="form-select"
               >
-                <option value="" >Select duration</option>
+                <option value="">Select duration</option>
                 <option>Less than 1 week</option>
                 <option>1 - 4 weeks</option>
                 <option>1 - 3 months</option>
@@ -196,8 +189,10 @@ const AddProjects = () => {
               </select>
             </div>
             <div className="col-md-6">
-              <label className="form-label fw-bold">Required Experience Level</label>
-              <select className="form-select"  >
+              <label className="form-label fw-bold">
+                Required Experience Level
+              </label>
+              <select className="form-select">
                 <option>Beginner</option>
                 <option>Intermediate</option>
                 <option>Expert</option>
@@ -222,7 +217,9 @@ const AddProjects = () => {
               </select>
             </div>
             <div className="col-md-6">
-              <label className="form-label fw-bold">Preferred Communication Method</label>
+              <label className="form-label fw-bold">
+                Preferred Communication Method
+              </label>
               <select className="form-select" required>
                 <option>Email</option>
                 <option>Phone Call</option>
@@ -241,7 +238,6 @@ const AddProjects = () => {
                 value={data.PaymentMethod}
                 onChange={handleChange}
                 className="form-select"
-
               >
                 <option value="">Select payment method</option>
                 <option>PayPal</option>
@@ -272,7 +268,10 @@ const AddProjects = () => {
 
           {/* Submit Button */}
           <div className="text-center mt-4">
-            <button className="btn btn-primary px-5 py-2" onClick={AddNewProject}>
+            <button
+              className="btn btn-primary px-5 py-2"
+              onClick={AddNewProject}
+            >
               Submit Project
             </button>
           </div>
@@ -285,12 +284,26 @@ const AddProjects = () => {
               <div key={index} className="col-md-4 mb-4">
                 <div className="card">
                   <div className="card-body text-start w-100">
-                    <h5 className="card-title text-primary">{pro.ProjectTitle}</h5>
-                    <p className="card-text"><strong>Deadline:</strong> {pro.Deadline}</p>
-                    <p className="card-text"><strong>Category:</strong> {pro.Category}</p>
-                    <p className="card-text"><strong>Description:</strong> {pro.ProjectDescription}</p>
+                    <h5 className="card-title text-primary">
+                      {pro.ProjectTitle}
+                    </h5>
+                    <p className="card-text">
+                      <strong>Deadline:</strong> {pro.Deadline}
+                    </p>
+                    <p className="card-text">
+                      <strong>Category:</strong> {pro.Category}
+                    </p>
+                    <p className="card-text">
+                      <strong>Description:</strong> {pro.ProjectDescription}
+                    </p>
                   </div>
-                  <div className="d-flex   gap-2 p-3 w-100" style={{ alignItems: "flex-start", justifyItems: "flex-start" }}>
+                  <div
+                    className="d-flex   gap-2 p-3 w-100"
+                    style={{
+                      alignItems: "flex-start",
+                      justifyItems: "flex-start",
+                    }}
+                  >
                     <button className="btn btn-primary w-auto">Edit</button>
                     <button className="btn btn-danger w-auto">Delete</button>
                   </div>
@@ -299,9 +312,6 @@ const AddProjects = () => {
             ))}
           </div>
         </div>
-
-
-
       </div>
     </div>
   );

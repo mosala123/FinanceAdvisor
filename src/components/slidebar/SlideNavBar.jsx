@@ -44,7 +44,7 @@ const SlideNavBar = () => {
         <ul>
           <li>
             <Link
-              to="/"
+              to="/FinanceAdvisor/"
               className={`d-flex gap-3 ${
                 location.pathname === "/" ? "active" : ""
               }`}
@@ -55,7 +55,7 @@ const SlideNavBar = () => {
           </li>
           <li>
             <Link
-              to="/about"
+              to="/FinanceAdvisor/about"
               className={`d-flex gap-3 ${
                 location.pathname === "/about" ? "active" : ""
               }`}
@@ -66,7 +66,7 @@ const SlideNavBar = () => {
           </li>
           <li>
             <Link
-              to="/create-invoice"
+              to="/FinanceAdvisor/create-invoice"
               className={`d-flex gap-3 ${
                 location.pathname === "/create-invoice" ? "active" : ""
               }`}
@@ -77,7 +77,7 @@ const SlideNavBar = () => {
           </li>
           <li>
             <Link
-              to="/invoiceslist"
+              to="/FinanceAdvisor/invoiceslist"
               className={`d-flex gap-3 ${
                 location.pathname === "/invoiceslist" ? "active" : ""
               }`}
@@ -88,7 +88,7 @@ const SlideNavBar = () => {
           </li>
           <li>
             <Link
-              to="/report"
+              to="/FinanceAdvisor/report"
               className={`d-flex gap-3 ${
                 location.pathname === "/report" ? "active" : ""
               }`}
@@ -99,7 +99,7 @@ const SlideNavBar = () => {
           </li>
           <li>
             <Link
-              to="/profile"
+              to="/FinanceAdvisor/profile"
               className={`d-flex gap-3 ${
                 location.pathname === "/profile" ? "active" : ""
               }`}
